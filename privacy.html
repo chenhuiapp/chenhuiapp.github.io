@@ -11,9 +11,11 @@
 <main>
   <p><a href="./">Chenhui Spot Mail</a></p>
   <h1>Privacy Policy</h1>
-  <p class="lede">Effective October 23, 2026.</p>
+  <p class="lede">Effective October 24, 2026.</p>
 
   <p>Chenhui Spot Mail ("Spot") is a Gmail client for macOS. It runs on your Mac and connects directly to Google. There is no Spot server, so your data is never sent to the developer.</p>
+
+  <p>If you turn on its Claude features, Spot also connects to Anthropic, the maker of Claude, as described below.</p>
 
   <h2>Google data Spot accesses</h2>
   <ul>
@@ -27,25 +29,30 @@
   <ul>
     <li>Mail, calendar and contacts data are fetched from Google when needed and kept in memory while Spot runs.</li>
     <li>On your Mac, Spot stores your sign-in token encrypted with the macOS Keychain, plus a settings file with your settings, signatures, reminder times, the send times of emails you schedule, the addresses you send mail to (with how often and when, read once from your recent Sent mail and then from what you send in Spot, to order suggestions), addresses you asked Spot not to suggest, and the text of drafts you write in Spot (so they reopen exactly as written; the drafts themselves are saved in your Gmail).</li>
+    <li>If you add a Claude API key, Spot stores it encrypted with the macOS Keychain.</li>
+    <li>If you turn on Record activity, Spot keeps an activity log on your Mac: which app was in front and the title of its window, with times, recorded only while Spot runs. For apps and window titles on your ignore lists it keeps only the app's name. Next to the log it keeps the names it gives blocks of your activity, and your daily recaps. Each day's files are deleted after 30 days.</li>
     <li>Attachments are saved only when you save them, to a place you choose.</li>
   </ul>
 
   <h2>What Spot shares</h2>
   <ul>
-    <li>Spot sends your data only to Google, to carry out what you ask. It has no analytics, ads or tracking.</li>
-    <li>When you choose Open in Notion Calendar, Spot passes that event's title, time, calendar ID (iCalUID) and account address to the Notion Calendar app on your Mac, which opens the event. Nothing else leaves Spot for any app or service other than Google.</li>
+    <li>Spot sends your data only to Google, and, if you turn on Claude, to Anthropic as described below, to carry out what you ask. It has no analytics, ads or tracking.</li>
+    <li><strong>Anthropic (Claude)</strong>: if you add your own Claude API key and turn on Use Claude, Spot sends Anthropic what the daily work recap needs, for the day being recapped: app names and window titles from the activity log, with their times (titles on your ignore lists left out), the names, groups and notes of your activity blocks, including time you add yourself, the group names used in the past week, the titles and times of that day's calendar events, and the subjects and recipient names of mail you sent that day. Message bodies are never sent. Spot sends this about every 2 hours while it runs, and when the recap is written. Under Anthropic's API terms this data is not used to train its models, and Anthropic keeps it for up to 30 days.</li>
+    <li>If you choose a daily notes folder, Spot writes each day's recap into that day's note there. It is a file on your Mac, and goes wherever that folder syncs.</li>
+    <li>When you choose Open in Notion Calendar, Spot passes that event's title, time, calendar ID (iCalUID) and account address to the Notion Calendar app on your Mac, which opens the event. Nothing else leaves Spot for any app or service other than Google and Anthropic.</li>
     <li>Drafts you write in Spot are saved to your Gmail Drafts, like drafts written in Gmail.</li>
     <li>Emails you schedule wait in your Gmail Drafts; Spot sends them to Google at the time you chose, and only while it is running.</li>
-    <li>Your data is not sold, not shared with third parties, not used for advertising, and not used to train AI models.</li>
+    <li>Your data is not sold, not used for advertising, and not used to train AI models. It is shared only as described here.</li>
     <li>Remote images in emails are blocked by default. If you turn them on, opening a message loads its images from the sender's servers, as in any email client.</li>
   </ul>
 
   <h2>Limited Use</h2>
-  <p>Spot's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+  <p>Spot's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google user data Spot sends to Anthropic (calendar event titles and times, and the subjects and recipient names of mail you sent) is sent only for the daily recap you turned on, and is not used to train AI models.</p>
 
   <h2>Removing your data</h2>
   <ul>
     <li>Sign out in Spot's Settings to revoke its access token.</li>
+    <li>Turn off Record activity in Settings to stop recording; delete <code>~/Library/Application Support/Spot/activity</code> to remove the log at once.</li>
     <li>Delete <code>~/Library/Application Support/Spot</code> to remove everything Spot stored on your Mac.</li>
     <li>You can also remove Spot's access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
   </ul>
