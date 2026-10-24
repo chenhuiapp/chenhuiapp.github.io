@@ -19,13 +19,14 @@
   <ul>
     <li><strong>Gmail</strong> (<code>gmail.modify</code>): to list and show your messages, send mail you write, and archive, trash or label messages when you ask. Spot creates two Gmail labels, <code>Spot/To do</code> and <code>Spot/Reminder</code>, to keep your triage state.</li>
     <li><strong>Google Calendar</strong> (<code>calendar.readonly</code>, <code>calendar.events</code>): to show your calendars and events, to answer an invitation when you press Yes, Maybe or No (Google then tells the organizer), and to add events you create in Spot or invitations you ask it to add. Spot changes your calendar only when you ask, and never changes calendar settings or sharing.</li>
+    <li><strong>Google Contacts</strong> (<code>contacts.readonly</code>, <code>contacts.other.readonly</code>): to suggest addresses as you type in To, Cc, Bcc and an event's guests, from your contacts and the "Other contacts" Google saves when you email someone. Spot only reads them; it never changes your contacts.</li>
     <li><strong>Basic profile</strong> (<code>openid</code>, <code>email</code>): to show which accounts are signed in.</li>
   </ul>
 
   <h2>What Spot stores</h2>
   <ul>
-    <li>Mail and calendar data are fetched from Google when needed and kept in memory while Spot runs.</li>
-    <li>On your Mac, Spot stores your sign-in token encrypted with the macOS Keychain, plus a settings file with your settings, signatures, reminder times, the send times of emails you schedule, and the text of drafts you write in Spot (so they reopen exactly as written; the drafts themselves are saved in your Gmail).</li>
+    <li>Mail, calendar and contacts data are fetched from Google when needed and kept in memory while Spot runs.</li>
+    <li>On your Mac, Spot stores your sign-in token encrypted with the macOS Keychain, plus a settings file with your settings, signatures, reminder times, the send times of emails you schedule, the addresses you send mail to (with how often and when, read once from your recent Sent mail and then from what you send in Spot, to order suggestions), addresses you asked Spot not to suggest, and the text of drafts you write in Spot (so they reopen exactly as written; the drafts themselves are saved in your Gmail).</li>
     <li>Attachments are saved only when you save them, to a place you choose.</li>
   </ul>
 
